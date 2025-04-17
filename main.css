@@ -19,12 +19,173 @@
   ul {
     list-style: none;
   }
+
+  /* Dark Mode Styles */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 64px;
+  right: 32px;
+  border: none;
+  background: #2965e7;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /*Permet une transition fluide */
+}
+
+body.darkmode .dark-mode-toggle {
+  background: #f97316;  /* Orange en mode sombre */
+}
+
+body.darkmode .dark-mode-toggle:hover {
+  background: #ea580c;  /* Orange plus foncé au hover en mode sombre */
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1); /*Permet le grossissement du bouton au survol, de 10% */
+}
+
+/* Styles pour le mode sombre */
+body.darkmode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.darkmode header {
+  background-color: #2d2d2d;
+  border-color: #3d3d3d;
+}
+
+body.darkmode .journey-simple {
+  background-color: #2d2d2d;
+}
+
+body.darkmode .card span {
+  background-color: #f97316;
+}
+
+body.darkmode footer {
+  background-color: #1a1a1a;
+  color: #94a3b8;
+}
+
+body.darkmode .popular-destinations h2,
+body.darkmode .journey-simple h2,
+body.darkmode .promo-text h2 {
+  color: #ffffff;
+}
+
+body.darkmode .popular-destinations p,
+body.darkmode .journey-simple p,
+body.darkmode .promo-text p {
+  color: #ffffff;
+}
+
+body.darkmode .card h3 {
+  color: #ffffff;
+}
+
+body.darkmode .step h4 {
+  color: #ffffff;
+}
+
+body.darkmode .promo-text p:last-of-type {
+  color: #f97316;
+}
+
+
+body.darkmode .btn-primary {
+  background-color: #f97316;
+}
+
+body.darkmode .btn-primary:hover {
+  background-color: #ea580c;
+}
+
+/* Protéger l'image d'arrière-plan de la hero section */
+body.darkmode .hero::before {
+  filter: none;
+}
+
+/* Autres éléments à adapter en dark mode */
+body.darkmode .card,
+body.darkmode .step {
+  background-color: #2d2d2d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
   
 /* CONTAINER */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Styles du burger menu */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.burger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #0f172a;
+  transition: 0.3s;
+}
+
+/* Style pour le mode sombre */
+body.darkmode .burger-bar {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 2rem;
+    transition: 0.3s;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  body.darkmode .nav-menu {
+    background-color: #2d2d2d;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  nav li {
+    margin: 1rem 0;
+  }
+
+  .mobile-btn {
+    margin-top: 2rem;
+  }
 }
 
 /* HEADER */
@@ -78,6 +239,14 @@ nav ul {
   
 /* HERO */
 
+/*.darkmode-ignore {
+  isolation: isolate;
+}
+
+.hero {
+  isolation: isolate;
+}*/
+
 /*Image background*/
 .hero {
   background: url('Avion.png') no-repeat center center;
@@ -87,7 +256,9 @@ nav ul {
   margin: 2rem auto;
   max-width: 1400px;
   overflow: hidden;
+  
 }
+
 
 /*Contient le texte hero section*/
 .hero-text {
@@ -342,6 +513,20 @@ footer {
 
   /* Pour les très petits écrans */
 @media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  header .logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 250px) {
   .hero-text h1 {
     font-size: 2rem;
   }

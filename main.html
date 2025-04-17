@@ -6,14 +6,57 @@
   <title>FLYOUGAXX VOYAGEATION</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="main.css" /> 
+
+
+  
 </head>
+
+
+<!-- Dark Mode Script
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const options = {
+      bottom: '64px', // Position depuis le bas
+      right: '32px',  // Position depuis la droite
+      left: 'unset',  // Désactive le positionnement gauche
+      time: '0.5s',   // Temps de transition
+      mixColor: '#fff', // Couleur de mélange
+      backgroundColor: '#fff',  // Couleur de fond
+      buttonColorDark: '#100f2c',  // Couleur du bouton en mode sombre
+      buttonColorLight: '#fff',    // Couleur du bouton en mode clair
+      saveInCookies: true,    // Sauvegarde la préférence
+      label: '🌓',    // Emoji ou texte du bouton
+      autoMatchOsTheme: true,  // Match avec le thème du système
+      /*brightness: 100, // Conserve la luminosité originale
+      contrast: 90, // Ajouté pour réduire l'effet d'inversion
+      sepia: 10, // Ajouté pour adoucir les couleurs*/
+      ignoreInlineStyle: false, // Ne pas ignorer les styles en ligne
+      excludedClasses: ['hero-image'], // Exclure certaines classes
+      preserveBackgroundImageColor: true // Préserve les couleurs des images d'arrière-plan
+    }
+    
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script> -->
+
+<script src="main.js"></script>
+
+
 <body>
 
   <!-- Header -->
   <header>
     <div class="container">
       <div class="logo">FLYOUGAXX</div>
-      <nav>
+      <button class="burger-menu" aria-label="Menu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <nav class="nav-menu">
         <ul>
           <li><a href="trompage.html">Nous-même</a></li>
           <li><a href="trompage.html">Voyageation</a></li>
@@ -21,7 +64,7 @@
           <li><a href="trompage.html">Parlez à nous içi</a></li>
         </ul>
       </nav>
-      <a href="trompage.html" class="btn-primary">Voyageation</a>
+      <a href="trompage.html" class="btn-primary header-btn">Voyageation</a>
     </div>
   </header>
 
@@ -104,7 +147,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Flyougaxx. Tous les droits ils sont reservés, d'accord ?.</p>
+      <p>&copy; 2025 Flyougaxx. Tous les droits ils sont reservés, d'accord ?</p>
     </div>
   </footer>
 
