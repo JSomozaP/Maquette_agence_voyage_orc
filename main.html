@@ -1,14 +1,31 @@
+<!-- Déclaration du type de document - indique qu'il s'agit d'HTML5 -->
 <!DOCTYPE html>
+
+<!-- Balise racine du document HTML avec attribut de langue française -->
 <html lang="fr">
+
+<!-- En-tête du document contenant les métadonnées -->
+
 <head>
+  <!-- Définit l'encodage des caractères en UTF-8 (supporte les accents et caractères spéciaux) -->
   <meta charset="UTF-8" />
+
+  <!-- Configure l'affichage sur les appareils mobiles :
+       - width=device-width : adapte la largeur à l'écran de l'appareil
+       - initial-scale=1.0 : définit le niveau de zoom initial -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
   <title>FLYOUGAXX VOYAGEATION</title>
+
+  <!-- Importe la police Poppins depuis Google Fonts avec différentes graisses :
+       - 400 : normal
+       - 600 : semi-gras
+       - 700 : gras -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="main.css" /> 
 
-
-  
+  <!-- Liaison avec la feuille de style CSS externe -->
+  <link rel="stylesheet" href="main.css" />
 </head>
 
 
@@ -42,21 +59,34 @@
   window.addEventListener('load', addDarkmodeWidget);
 </script> -->
 
+<!-- Inclusion du fichier JavaScript principal -->
 <script src="main.js"></script>
 
+<!-- Corps du document -->
 
 <body>
 
   <!-- Header -->
+  <!-- En-tête du site -->
   <header>
+    <!-- Conteneur principal avec largeur maximale -->
     <div class="container">
+      <!-- Logo du site -->
       <div class="logo">FLYOUGAXX</div>
-      <button class="burger-menu" aria-label="Menu">
+
+      <!-- Bouton du menu burger pour mobile -->
+      <button class="burger-menu" aria-label="Ouvrir le menu">
+        <!-- 3 barres qui forment l'icône du menu burger -->
         <span class="burger-bar"></span>
         <span class="burger-bar"></span>
         <span class="burger-bar"></span>
       </button>
+
+      <!-- Navigation principale -->
       <nav class="nav-menu">
+        <!-- Bouton pour fermer le menu sur mobile -->
+        <button class="close-menu" aria-label="fermer le menu">x</button>
+        <!-- Liste des liens de navigation -->
         <ul>
           <li><a href="trompage.html">Nous-même</a></li>
           <li><a href="trompage.html">Voyageation</a></li>
@@ -64,39 +94,62 @@
           <li><a href="trompage.html">Parlez à nous içi</a></li>
         </ul>
       </nav>
+
+      <!-- Bouton d'action principal dans le header -->
       <a href="trompage.html" class="btn-primary header-btn">Voyageation</a>
     </div>
   </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
+  <!-- Hero Section -->
+  <!-- Section héros - Section principale en haut de la page avec image de fond -->
+  <section class="hero">
+    <!-- Conteneur pour limiter la largeur et centrer le contenu -->
+    <div class="container">
+      <!-- Bloc de texte du héros -->
       <div class="hero-text">
-          <p>Ouvrir chakra de toi</p>
-          <h1>Voyages<br>Fort<br>Maintenant!</h1>
-          <a href="trompage.html" class="btn-primary">Voyageation ici</a>
+        <!-- Accroche principale -->
+        <p>Ouvrir chakra de toi</p>
+        <!-- Titre principal avec sauts de ligne (br) pour le style -->
+        <h1>Voyages<br>Fort<br>Maintenant!</h1>
+        <!-- Bouton d'action principal -->
+        <a href="trompage.html" class="btn-primary">Voyageation ici</a>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- Destination Populaires -->
+  <!-- Section des destinations populaires - Affiche les lieux mis en avant -->
   <section class="popular-destinations">
+    <!-- Conteneur pour centrer et limiter la largeur du contenu -->
     <div class="container">
+      <!-- Titre principal de la section -->
       <h2>Gigas Endroits</h2>
+      <!-- Sous-titre / Description -->
       <p>Pour faire trucs</p>
+
+      <!-- Conteneur des cartes de destination -->
       <div class="destination-cards">
+        <!-- Première carte - Forêt -->
         <div class="card">
+          <!-- Image de la destination avec texte alternatif -->
           <img src="Foret.png" alt="Destination 1" />
+          <!-- Titre de la destination -->
           <h3>Forêt super accueillante</h3>
+          <!-- Nom du lieu -->
           <p>Strangleronce</p>
+          <!-- Note avec étoile -->
           <span>★ 2.5</span>
         </div>
+
+        <!-- Deuxième carte - Plage -->
         <div class="card">
           <img src="Plage.png" alt="Destination 2" />
           <h3>Plage pas dangereuse</h3>
           <p>Baie du Butin</p>
           <span>★ 9.7</span>
         </div>
+
+        <!-- Troisième carte - Champ de fleurs -->
         <div class="card">
           <img src="Fleurs.png" alt="Destination 3" />
           <h3>Fleurs (beaucoup)</h3>
@@ -108,19 +161,32 @@
   </section>
 
   <!-- Journey Made Simple -->
+  <!-- Section "Comment ça marche" - Explique le processus en 3 étapes simples -->
   <section class="journey-simple">
+    <!-- Conteneur pour centrer et limiter la largeur du contenu -->
     <div class="container">
+      <!-- Titre principal de la section -->
       <h2>Voler fort dans ciel, facile !</h2>
+      <!-- Sous-titre explicatif -->
       <p>Voyageation bon moyen manger beaucoup, voir trucs, et dormir fort</p>
+
+      <!-- Conteneur des étapes du processus -->
       <div class="steps">
+        <!-- Première étape - Recherche -->
         <div class="step">
+          <!-- Image illustrative avec texte alternatif -->
           <img src="Stormwind.png" alt="Trouve" />
+          <!-- Description de l'étape -->
           <h4>Trouve endroits cool</h4>
         </div>
+
+        <!-- Deuxième étape - Voyage -->
         <div class="step">
           <img src="Dalaran.png" alt="Vas" />
           <h4>Vas là-bas vite</h4>
         </div>
+
+        <!-- Troisième étape - Satisfaction -->
         <div class="step">
           <img src="Exodar.png" alt="Content" />
           <h4>Sois content fort</h4>
@@ -129,27 +195,92 @@
     </div>
   </section>
 
-<!-- Promo Section -->
-<section class="promo">
-  <div class="container promo-grid">
-    <div class="promo-image">
-      <img src="booking.png" alt="Super Orc" />
-    </div>
-    <div class="promo-text">
-      <h2>FAIS BEAUCOUP TRAJETS AVEC<br>FLYOUGAXX</h2>
-      <p>Grâce à voyageation, cerveau devient plus gros, même si bourse plus petite, mais pas important ça !</p>
-    </div>
-    <p><strong>O,5% OFF</strong> Super reduc maintenant !</p>
-    <a href="trompage.html" class="btn-primary">Reserve voyageation vite ! (avant stock fini)</a>
-  </div>
-</section>
+  <!-- Promo Section -->
+  <!-- Section promotionnelle - Met en avant une offre spéciale -->
+  <section class="promo">
+    <!-- Conteneur avec mise en page en grille -->
+    <div class="container promo-grid">
+      <!-- Zone de l'image promotionnelle -->
+      <div class="promo-image">
+        <!-- Image avec texte alternatif -->
+        <img src="booking.png" alt="Super Orc" />
+      </div>
 
-  <!-- Footer -->
+      <!-- Zone de texte promotionnel -->
+      <div class="promo-text">
+        <!-- Titre principal en majuscules avec saut de ligne -->
+        <h2>FAIS BEAUCOUP TRAJETS AVEC<br>FLYOUGAXX</h2>
+        <!-- Texte explicatif humoristique -->
+        <p>Grâce à voyageation, cerveau devient plus gros, même si bourse plus petite, mais pas important ça !</p>
+      </div>
+
+      <!-- Message de réduction -->
+      <p><strong>O,5% OFF</strong> Super reduc maintenant !</p>
+      <!-- Bouton d'appel à l'action -->
+      <a href="trompage.html" class="btn-primary">Reserve voyageation vite ! (avant stock fini)</a>
+    </div>
+  </section>
+
+  <!-- Pied de page du site -->
   <footer>
+    <!-- Conteneur centré avec largeur maximale -->
     <div class="container">
+      <!-- Copyright avec année et message humoristique -->
       <p>&copy; 2025 Flyougaxx. Tous les droits ils sont reservés, d'accord ?</p>
     </div>
   </footer>
 
+  <!-- Modal du formulaire de contact - Fenêtre qui s'affiche par-dessus le contenu -->
+  <div class="modal" id="contactModal">
+    <!-- Contenu principal du modal -->
+    <div class="modal-content">
+      <!-- Bouton de fermeture du modal -->
+      <button class="close-modal">×</button>
+      <!-- Titre du formulaire -->
+      <h2>Parlez nous fort !</h2>
+
+      <!-- Formulaire de contact -->
+      <form id="contactForm">
+        <!-- Groupe pour le prénom -->
+        <div class="form-group">
+          <!-- Label avec style humoristique -->
+          <label for="prenom">Ton intitulation</label>
+          <!-- Champ de saisie avec validation requise -->
+          <input type="text" id="prenom" name="prenom" required>
+          <!-- Conteneur pour les messages d'erreur -->
+          <span class="error-message"></span>
+        </div>
+
+        <!-- Groupe pour le nom -->
+        <div class="form-group">
+          <label for="nom">Intitultion de famille</label>
+          <input type="text" id="nom" name="nom" required>
+          <span class="error-message"></span>
+        </div>
+
+        <!-- Groupe pour l'email -->
+        <div class="form-group">
+          <label for="email">Courrier Magique Merveilleux</label>
+          <!-- Type email pour validation native du navigateur -->
+          <input type="email" id="email" name="email" required>
+          <span class="error-message"></span>
+        </div>
+
+        <!-- Groupe pour le message -->
+        <div class="form-group">
+          <label for="message">Toi nous dire quoi ?</label>
+          <!-- Zone de texte multiligne -->
+          <textarea id="message" name="message" required></textarea>
+          <span class="error-message"></span>
+        </div>
+
+        <!-- Bouton d'envoi du formulaire -->
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Fermeture des balises principales -->
 </body>
+
 </html>

@@ -1,542 +1,735 @@
+/* Reset CSS - Supprime les marges et paddings par défaut */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    color: #0f172a;
-    background-color: #f8fafc;
-    line-height: 1.6;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  ul {
-    list-style: none;
-  }
+  margin: 0;
+  padding: 0;
+  /* Force le calcul des dimensions en incluant padding et border */
+  box-sizing: border-box;
+}
 
-  /* Dark Mode Styles */
+/* Styles de base du body */
+body {
+  /* Police principale du site */
+  font-family: 'Poppins', sans-serif;
+  /* Couleur du texte - bleu très foncé */
+  color: #0f172a;
+  /* Couleur de fond - gris très clair */
+  background-color: #f8fafc;
+  /* Espacement entre les lignes de texte */
+  line-height: 1.6;
+}
+
+/* Style global des liens */
+a {
+  /* Supprime le soulignement par défaut des liens */
+  text-decoration: none;
+  /* Hérite de la couleur du parent */
+  color: inherit;
+}
+
+/* Style global des listes */
+ul {
+  /* Supprime les puces des listes */
+  list-style: none;
+}
+
+/* Styles du bouton Dark Mode */
 .dark-mode-toggle {
+  /* Positionnement fixe en bas à droite */
   position: fixed;
   bottom: 64px;
   right: 32px;
+  /* Apparence du bouton */
   border: none;
-  background: #2965e7;
+  background: #2965e7;  /* Bleu */
   color: white;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 50%;  /* Forme circulaire */
   cursor: pointer;
   font-size: 1.2rem;
+  /* Ombre portée légère */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease; /*Permet une transition fluide */
+  /* Animation douce pour tous les changements */
+  transition: all 0.3s ease;
 }
 
+/* Style du bouton en mode sombre */
 body.darkmode .dark-mode-toggle {
   background: #f97316;  /* Orange en mode sombre */
 }
 
+/* Style du bouton au survol en mode sombre */
 body.darkmode .dark-mode-toggle:hover {
-  background: #ea580c;  /* Orange plus foncé au hover en mode sombre */
+  background: #ea580c;  /* Orange plus foncé */
 }
 
+/* Animation au survol du bouton */
 .dark-mode-toggle:hover {
-  transform: scale(1.1); /*Permet le grossissement du bouton au survol, de 10% */
+  /* Agrandit le bouton de 10% */
+  transform: scale(1.1);
 }
 
-/* Styles pour le mode sombre */
+/* Styles pour le mode sombre - Modifications des couleurs quand .darkmode est activé */
+
+/* Couleur de fond principale et texte */
 body.darkmode {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: #1a1a1a;  /* Fond presque noir */
+  color: #ffffff;             /* Texte blanc */
 }
 
+/* En-tête en mode sombre */
 body.darkmode header {
-  background-color: #2d2d2d;
-  border-color: #3d3d3d;
+  background-color: #2d2d2d;  /* Gris foncé pour le header */
+  border-color: #3d3d3d;      /* Bordure légèrement plus claire */
 }
 
+/* Section "Journey Simple" en mode sombre */
 body.darkmode .journey-simple {
-  background-color: #2d2d2d;
+  background-color: #2d2d2d;  /* Même gris foncé que le header */
 }
 
+/* Notes des destinations en mode sombre */
 body.darkmode .card span {
-  background-color: #f97316;
+  background-color: #f97316;  /* Orange pour plus de contraste */
 }
 
+/* Pied de page en mode sombre */
 body.darkmode footer {
-  background-color: #1a1a1a;
-  color: #94a3b8;
+  background-color: #1a1a1a;  /* Même fond que le body */
+  color: #94a3b8;            /* Gris clair pour le texte du footer */
 }
 
+/* Titres des sections en mode sombre */
 body.darkmode .popular-destinations h2,
 body.darkmode .journey-simple h2,
 body.darkmode .promo-text h2 {
-  color: #ffffff;
+  color: #ffffff;  /* Texte blanc pour les titres */
 }
 
+/* Paragraphes des sections en mode sombre */
 body.darkmode .popular-destinations p,
 body.darkmode .journey-simple p,
 body.darkmode .promo-text p {
-  color: #ffffff;
+  color: #ffffff;  /* Texte blanc pour les paragraphes */
 }
 
+/* Titres des cartes en mode sombre */
 body.darkmode .card h3 {
-  color: #ffffff;
+  color: #ffffff;  /* Texte blanc pour les titres de carte */
 }
 
+/* Titres des étapes en mode sombre */
 body.darkmode .step h4 {
-  color: #ffffff;
+  color: #ffffff;  /* Texte blanc pour les titres d'étape */
 }
 
+/* Prix promo en mode sombre */
 body.darkmode .promo-text p:last-of-type {
-  color: #f97316;
+  color: #f97316;  /* Orange pour le prix/promo */
 }
 
-
+/* Boutons principaux en mode sombre */
 body.darkmode .btn-primary {
-  background-color: #f97316;
+  background-color: #f97316;  /* Fond orange */
 }
 
+/* Survol des boutons en mode sombre */
 body.darkmode .btn-primary:hover {
-  background-color: #ea580c;
+  background-color: #ea580c;  /* Orange plus foncé au survol */
 }
 
-/* Protéger l'image d'arrière-plan de la hero section */
+/* Préserve les couleurs de l'image hero en mode sombre */
 body.darkmode .hero::before {
-  filter: none;
+  filter: none;  /* Désactive les filtres CSS sur l'image */
 }
 
-/* Autres éléments à adapter en dark mode */
+/* Adaptation des cartes et étapes en mode sombre */
 body.darkmode .card,
 body.darkmode .step {
-  background-color: #2d2d2d;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #2d2d2d;  /* Fond gris foncé */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Ombre plus prononcée */
 }
-  
-/* CONTAINER */
+
+/* Conteneur principal - Limite la largeur du contenu */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  max-width: 1200px;  /* Largeur maximale */
+  margin: 0 auto;     /* Centrage horizontal */
+  padding: 0 1.5rem;  /* Espace sur les côtés */
 }
 
-/* Styles du burger menu */
+/* Menu burger - Caché par défaut (desktop) */
 .burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+  display: none;      /* Invisible sur desktop */
+  background: none;   /* Fond transparent */
+  border: none;       /* Pas de bordure */
+  cursor: pointer;    /* Curseur pointer au survol */
   padding: 0;
-  z-index: 100;
+  z-index: 100;      /* Au-dessus des autres éléments */
 }
 
+/* Barres du menu burger */
 .burger-bar {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px 0;
-  background-color: #0f172a;
-  transition: 0.3s;
+  width: 25px;       /* Largeur des barres */
+  height: 3px;       /* Épaisseur des barres */
+  margin: 5px 0;     /* Espace entre les barres */
+  background-color: #0f172a;  /* Couleur des barres */
+  transition: 0.3s;  /* Animation douce */
 }
 
-/* Style pour le mode sombre */
-body.darkmode .burger-bar {
-  background-color: #ffffff;
+/* Bouton de fermeture du menu */
+.close-menu {
+  position: absolute;  /* Positionnement absolu */
+  top: 1rem;          /* Distance du haut */
+  right: 1rem;        /* Distance de la droite */
+  background: none;    /* Fond transparent */
+  border: none;       /* Pas de bordure */
+  font-size: 2rem;    /* Taille de la croix */
+  cursor: pointer;    /* Curseur pointer au survol */
+  color: #0f172a;     /* Couleur de la croix */
+  padding: 0.5rem;
+  display: none;      /* Caché par défaut */
 }
 
+/* Cache le menu burger quand il est inactif */
+.burger-menu.hidden {
+  display: none;
+}
+
+/* Couleur du bouton de fermeture en mode sombre */
+body.darkmode .close-menu {
+  color: #ffffff;     /* Blanc en mode sombre */
+}
+
+/* Adaptations pour les écrans mobiles */
 @media (max-width: 768px) {
   .burger-menu {
-    display: block;
+      display: block;  /* Affiche le menu burger */
   }
 
+  .close-menu {
+      display: block;  /* Affiche le bouton de fermeture */
+  }
+}
+
+
+
+/* Couleur des barres du menu burger en mode sombre */
+body.darkmode .burger-bar {
+  background-color: #ffffff;  /* Barres blanches pour contraste */
+}
+
+/* Adaptations pour les écrans mobiles (max 768px) */
+@media (max-width: 768px) {
+  /* Affichage du menu burger sur mobile */
+  .burger-menu {
+      display: block;  /* Rend visible le menu burger */
+  }
+
+  /* Style du menu de navigation */
   .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background-color: #ffffff;
-    padding: 2rem;
-    transition: 0.3s;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      position: fixed;         /* Position fixe par rapport à la fenêtre */
+      top: 0;                 /* Colle en haut */
+      right: -100%;           /* Cache le menu hors écran */
+      width: 70%;             /* Largeur du menu */
+      height: 100vh;          /* Hauteur plein écran */
+      background-color: #ffffff;  /* Fond blanc */
+      padding: 2rem;          /* Espace intérieur */
+      transition: 0.3s;       /* Animation douce */
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);  /* Ombre à gauche */
   }
 
+  /* Menu de navigation en mode sombre */
   body.darkmode .nav-menu {
-    background-color: #2d2d2d;
+      background-color: #2d2d2d;  /* Fond gris foncé */
   }
 
+  /* Menu actif (ouvert) */
   .nav-menu.active {
-    right: 0;
+      right: 0;  /* Affiche le menu en le faisant glisser */
   }
 
+  /* Liste de navigation */
   nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 2rem;
+      flex-direction: column;     /* Empile les éléments */
+      align-items: flex-start;    /* Aligne à gauche */
+      margin-top: 2rem;          /* Espace en haut */
   }
 
+  /* Éléments de la liste */
   nav li {
-    margin: 1rem 0;
+      margin: 1rem 0;  /* Espace vertical entre les liens */
   }
 
+  /* Bouton mobile */
   .mobile-btn {
-    margin-top: 2rem;
+      margin-top: 2rem;  /* Espace au-dessus du bouton */
   }
 }
 
-/* HEADER */
+/* Styles de la fenêtre modale */
+.modal {
+  display: none;  /* Caché par défaut */
+  position: fixed;  /* Position fixe sur l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;    /* Pleine largeur */
+  height: 100%;   /* Pleine hauteur */
+  background-color: rgba(0, 0, 0, 0.5);  /* Fond semi-transparent */
+  z-index: 1000;  /* Au-dessus des autres éléments */
+  justify-content: center;  /* Centrage horizontal */
+  align-items: center;      /* Centrage vertical */
+}
 
-/*Reprtition des éléments du header*/
+/* Modal actif */
+.modal.active {
+  display: flex;  /* Affiche le modal */
+}
+
+/* Contenu du modal */
+.modal-content {
+  background-color: #fff;  /* Fond blanc */
+  padding: 2rem;          /* Espace intérieur */
+  border-radius: 1rem;    /* Coins arrondis */
+  width: 90%;            /* Largeur responsive */
+  max-width: 500px;      /* Largeur maximale */
+  position: relative;    /* Pour le bouton de fermeture */
+}
+
+/* Contenu du modal en mode sombre */
+body.darkmode .modal-content {
+  background-color: #2d2d2d;  /* Fond gris foncé */
+  color: #ffffff;            /* Texte blanc */
+}
+
+/* Bouton de fermeture du modal */
+.close-modal {
+  position: absolute;  /* Position absolue dans le modal */
+  top: 1rem;          /* Distance du haut */
+  right: 1rem;        /* Distance de la droite */
+  background: none;   /* Fond transparent */
+  border: none;       /* Pas de bordure */
+  font-size: 1.5rem;  /* Taille du X */
+  cursor: pointer;    /* Curseur pointer */
+  color: #0f172a;     /* Couleur sombre */
+}
+
+/* Bouton de fermeture en mode sombre */
+body.darkmode .close-modal {
+  color: #ffffff;  /* Blanc pour contraste */
+}
+
+/* Styles des groupes de champs du formulaire */
+.form-group {
+  margin-bottom: 1.5rem;  /* Espace entre chaque groupe de champs */
+}
+
+/* Style des labels de formulaire */
+.form-group label {
+  display: block;  /* Affiche les labels sur leur propre ligne */
+  margin-bottom: 0.5rem;  /* Espace sous les labels */
+}
+
+/* Style des champs de saisie et zones de texte */
+.form-group input,
+.form-group textarea {
+  width: 100%;  /* Pleine largeur du conteneur */
+  padding: 0.75rem;  /* Espace intérieur */
+  border: 1px solid #e2e8f0;  /* Bordure gris clair */
+  border-radius: 0.5rem;  /* Coins arrondis */
+  background-color: #ffffff;  /* Fond blanc */
+}
+
+/* Adaptation des champs en mode sombre */
+body.darkmode .form-group input,
+body.darkmode .form-group textarea {
+  background-color: #1a1a1a;  /* Fond très sombre */
+  border-color: #3d3d3d;      /* Bordure gris foncé */
+  color: #ffffff;             /* Texte blanc */
+}
+
+/* Style des messages d'erreur */
+.error-message {
+  color: #ef4444;  /* Rouge pour les erreurs */
+  font-size: 0.875rem;  /* Taille de texte réduite */
+  margin-top: 0.25rem;  /* Petit espace au-dessus */
+  display: block;  /* Sur sa propre ligne */
+}
+
+/* ====== HEADER ====== */
+
+/* Configuration du conteneur d'en-tête */
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  display: flex;  /* Disposition flexible */
+  justify-content: space-between;  /* Espace entre les éléments */
+  align-items: center;  /* Centrage vertical */
+  gap: 2rem;  /* Espace entre les éléments */
 }
 
-/*Couleur de fond du header*/
+/* Style de base du header */
 header {
-  background-color: #ffffff;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  background-color: #ffffff;  /* Fond blanc */
+  padding: 1.5rem 0;  /* Espace vertical */
+  border-bottom: 1px solid #e2e8f0;  /* Bordure basse */
 }
 
-/*Logo du header*/
+/* Style du logo */
 header .logo {
-  font-weight: 700;
-  font-size: 1.90rem;
+  font-weight: 700;  /* Police en gras */
+  font-size: 1.90rem;  /* Grande taille */
 }
 
+/* Navigation principale */
 nav {
-  flex: 1;
+  flex: 1;  /* Prend l'espace restant */
 }
 
-/*Header List*/
+/* Liste de navigation */
 nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  display: flex;  /* Disposition horizontale */
+  justify-content: center;  /* Centrage horizontal */
+  align-items: center;  /* Centrage vertical */
+  gap: 2rem;  /* Espace entre les liens */
 }
-  /*Container des boutons cliquables*/
-  .btn-primary {
-    background-color: #2563eb;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-  }
-  
-  /*Hover des boutons cliquables*/
-  .btn-primary:hover {
-    background-color: #1d4ed8;
-  }
-  
-/* HERO */
 
+/* Style des boutons principaux */
+.btn-primary {
+  background-color: #2563eb;  /* Bleu */
+  color: #ffffff;  /* Texte blanc */
+  padding: 0.75rem 1.5rem;  /* Espace intérieur */
+  border-radius: 9999px;  /* Coins très arrondis (aspect pilule) */
+  font-weight: 600;  /* Semi-gras */
+  transition: background 0.3s ease;  /* Animation au survol */
+}
+
+/* Effet au survol des boutons */
+.btn-primary:hover {
+  background-color: #1d4ed8;  /* Bleu plus foncé */
+}
+  
+/* ====== HERO SECTION ====== */
+
+/* Code pour isolation du mode sombre */
 /*.darkmode-ignore {
-  isolation: isolate;
+    isolation: isolate;
 }
-
 .hero {
-  isolation: isolate;
+    isolation: isolate;
 }*/
 
-/*Image background*/
+/* Configuration de l'arrière-plan hero */
 .hero {
-  background: url('Avion.png') no-repeat center center;
-  background-size: cover;
-  padding: 4rem 0;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  max-width: 1400px;
-  overflow: hidden;
-  
+  background: url('Avion.png') no-repeat center center;  /* Image de fond centrée */
+  background-size: cover;  /* Couvre toute la zone */
+  padding: 4rem 0;        /* Espace vertical */
+  border-radius: 2rem;    /* Coins arrondis */
+  margin: 2rem auto;      /* Marge et centrage */
+  max-width: 1400px;      /* Largeur maximale */
+  overflow: hidden;       /* Cache le débordement */
 }
 
-
-/*Contient le texte hero section*/
+/* Conteneur du texte hero */
 .hero-text {
-  max-width: 600px;
-  padding: 2rem;
+  max-width: 600px;  /* Largeur maximale */
+  padding: 2rem;     /* Espace intérieur */
 }
 
-/*Texte principal hero section*/
+/* Style du titre principal hero */
 .hero-text h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #f8f9fc;
-  line-height: 1.2;
+  font-size: 3.5rem;     /* Grande taille de police */
+  font-weight: 700;      /* Police en gras */
+  margin-bottom: 1.5rem; /* Espace sous le titre */
+  color: #f8f9fc;        /* Couleur claire */
+  line-height: 1.2;      /* Hauteur de ligne */
+  /* Contour du texte avec ombre */
   text-shadow:
-  -1px -1px 0 #000,  
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000,
-  2px 2px 4px rgba(0,0,0,0.5);
--webkit-text-stroke: 1px #000;
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      2px 2px 4px rgba(0,0,0,0.5);
+  -webkit-text-stroke: 1px #000;  /* Contour du texte */
 }
 
-/*Texte chakra hero section*/
+/* Style du sous-titre hero */
 .hero-text p {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #d4e1ff;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  -webkit-text-stroke: 0.6px #000000;
+  font-size: 1.6rem;    /* Taille de police */
+  font-weight: 600;     /* Semi-gras */
+  color: #d4e1ff;       /* Bleu clair */
+  margin-bottom: 1rem;  /* Espace dessous */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);  /* Ombre portée */
+  -webkit-text-stroke: 0.6px #000000;        /* Léger contour */
+}
+
+/* ====== DESTINATIONS POPULAIRES ====== */
+
+/* Section des destinations */
+.popular-destinations {
+  padding: 4rem 0;     /* Espace vertical */
+  text-align: center;  /* Centrage du texte */
+}
+
+/* Grille des cartes de destination */
+.destination-cards {
+  display: flex;           /* Disposition flexible */
+  gap: 1.5rem;            /* Espace entre les cartes */
+  justify-content: center; /* Centrage horizontal */
+  flex-wrap: wrap;        /* Passage à la ligne si besoin */
+  margin-top: 2rem;       /* Espace au-dessus */
+}
+
+/* Style des cartes */
+.card {
+  background-color: #fff;  /* Fond blanc */
+  border-radius: 1rem;     /* Coins arrondis */
+  overflow: hidden;        /* Cache le débordement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);  /* Ombre légère */
+  width: 280px;           /* Largeur fixe */
+  text-align: left;       /* Alignement du texte */
+}
+
+/* Images des cartes */
+.card img {
+  width: 100%;        /* Pleine largeur */
+  height: 180px;      /* Hauteur fixe */
+  object-fit: cover;  /* Couvre la zone */
+  border-radius: 2rem; /* Coins très arrondis */
+}
+
+/* Titres des cartes */
+.card h3 {
+  font-size: 1.1rem;  /* Taille de police */
+  padding: 1rem 1rem 0 1rem;  /* Espace autour */
+}
+
+/* Texte et cadre des cartes */
+.card p, .card {
+  padding: 0 1rem 1rem;  /* Espace intérieur */
+  font-size: 0.9rem;     /* Petite taille */
+  color: #475569;        /* Gris foncé */
+}
+
+/* Badge de notation */
+.card span {
+  background-color: #2563eb;  /* Fond bleu */
+  color: #ffffff;            /* Texte blanc */
+  padding: 0.75rem 1.5rem;   /* Espace intérieur */
+  border-radius: 9999px;     /* Forme de pilule */
+  font-weight: 900;          /* Très gras */
 }
   
-  /* DESTINATIONS POPULAIRES */
-  
-  /*Disposition texte carte*/
-  .popular-destinations {
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  /*Diposition des cartes*/
-  .destination-cards {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    width: 280px;
-    text-align: left;
-  }
-  
-  /*Image des cartes*/
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 2rem;
-  }
-  
-  /*Texte des cartes*/
-  .card h3 {
-    font-size: 1.1rem;
-    padding: 1rem 1rem 0 1rem;
-  }
-  
-  /*Cadre blanc des cartes*/
-  .card p, .card {
-    padding: 0 1rem 1rem;
-    font-size: 0.9rem;
-    color: #475569;
-    
-  }
+/* ====== SECTION VOYAGE SIMPLE ====== */
 
-  /*Notation des cartes et cadre bleu autour*/
-  .card span {
-    background-color: #2563eb;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 900;
+/* Fond et mise en page de la section */
+.journey-simple {
+  background-color: #f1f5f9;  /* Fond gris clair */
+  padding: 4rem 0;           /* Espace vertical */
+  text-align: center;        /* Centrage du texte */
+}
 
-  }
-  
-  /* VOYAGE SIMPLE */
-  
-  /*Fond coloré des cartes*/
-  .journey-simple {
-    background-color: #f1f5f9;
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  /*Disposition des cartes*/
-  .steps {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  /* Encadré des cartes*/
-  .step {
-    background: #ffffff;
-    padding: 1rem;
-    border-radius: 1rem;
-    width: 250px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  /*Image des cartes*/
-  .step img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-  }
-  
-  /*Texte des cartes*/
-  .step h4 {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
-  /*PROMO*/
+/* Conteneur des étapes */
+.steps {
+  display: flex;           /* Disposition flexible */
+  gap: 2rem;              /* Espace entre les étapes */
+  justify-content: center; /* Centrage horizontal */
+  flex-wrap: wrap;        /* Passage à la ligne si besoin */
+  margin-top: 2rem;       /* Espace au-dessus */
+}
+
+/* Carte individuelle d'étape */
+.step {
+  background: #ffffff;    /* Fond blanc */
+  padding: 1rem;         /* Espace intérieur */
+  border-radius: 1rem;   /* Coins arrondis */
+  width: 250px;         /* Largeur fixe */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);  /* Ombre légère */
+}
+
+/* Image dans les cartes d'étape */
+.step img {
+  width: 100%;          /* Pleine largeur */
+  height: 150px;        /* Hauteur fixe */
+  object-fit: cover;    /* Couvre la zone */
+  margin-bottom: 1rem;  /* Espace dessous */
+  border-radius: 1rem;  /* Coins arrondis */
+}
+
+/* Titre des étapes */
+.step h4 {
+  font-size: 1rem;      /* Taille de texte */
+  font-weight: 600;     /* Semi-gras */
+}
+
+/* ====== SECTION PROMO ====== */
+
+/* Grille de mise en page promo */
 .promo-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;  /* Ajusté pour donner plus d'espace au texte */
-  grid-template-areas: 
-    "image text"
-    "promo button";
-  gap: 2rem;
-  align-items: center;
+  display: grid;        /* Disposition en grille */
+  grid-template-columns: 0.8fr 1.2fr;  /* Colonnes proportionnelles */
+  grid-template-areas:  /* Définition des zones */
+      "image text"
+      "promo button";
+  gap: 2rem;           /* Espace entre les éléments */
+  align-items: center; /* Alignement vertical */
 }
 
+/* Zone de l'image promo */
 .promo-image {
-  grid-area: image;
-  max-width: 300px;  /* Limite la largeur maximale */
-  margin: 0 auto;    /* Centre l'image dans sa zone */
+  grid-area: image;     /* Positionnement dans la grille */
+  max-width: 300px;     /* Largeur maximale */
+  margin: 0 auto;       /* Centrage horizontal */
 }
 
+/* Image promotionnelle */
 .promo-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 1.5rem;
-  object-fit: cover;
+  width: 100%;          /* Pleine largeur */
+  height: auto;         /* Hauteur proportionnelle */
+  border-radius: 1.5rem; /* Coins très arrondis */
+  object-fit: cover;    /* Couvre la zone */
 }
-  
-  .promo-text {
-    grid-area: text;
-  }
-  
-  .promo-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .promo-text p:first-of-type {
-    margin-bottom: 1rem;
-    color: #475569;
-  }
-  
-  .promo-text p:last-of-type {
-    grid-area: promo;
-    font-size: 1.2rem;
-    color: #2563eb;
-    margin-top: 1rem;
-  }
-  
-  /*.promo-text .btn-primary {
-    grid-area: button;
-    justify-self: end;
-    margin-top: 1rem;
-    width: fit-content; /* Limite la largeur du bouton à son contenu 
-    white-space: nowrap; /* Empêche le texte de passer à la ligne 
-}*/
 
-/* FOOTER */
-footer {
-  background-color: #f8fafc;
-  padding: 2rem 0;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 0.9rem;
-  margin-top: 4rem; /* Ajoute de l'espace entre la section promo et le footer */
+/* Zone de texte promo */
+.promo-text {
+  grid-area: text;      /* Positionnement dans la grille */
+}
+
+/* Titre de la promo */
+.promo-text h2 {
+  font-size: 2rem;      /* Grande taille */
+  font-weight: 700;     /* Gras */
+  margin-bottom: 1rem;  /* Espace dessous */
+}
+
+/* Premier paragraphe de la promo */
+.promo-text p:first-of-type {
+  margin-bottom: 1rem;  /* Espace dessous */
+  color: #475569;       /* Gris foncé */
+}
+
+/* Prix/Réduction de la promo */
+.promo-text p:last-of-type {
+  grid-area: promo;     /* Positionnement dans la grille */
+  font-size: 1.2rem;    /* Taille moyenne */
+  color: #2563eb;       /* Bleu */
+  margin-top: 1rem;     /* Espace au-dessus */
 }
   
-  /*RESPONSIVE*/
-  @media (max-width: 768px) {
+
+/* Style du bouton promo (commenté) */
+/*.promo-text .btn-primary {
+    grid-area: button;              /* Place le bouton dans la zone définie
+    justify-self: end;             /* Aligne le bouton à droite
+    margin-top: 1rem;              /* Espace au-dessus
+    width: fit-content;            /* Adapte la largeur au contenu
+    white-space: nowrap;           /* Empêche le retour à la ligne 
+}
+*/
+
+/* ====== FOOTER ====== */
+footer {
+    background-color: #f8fafc;  /* Fond gris très clair */
+    padding: 2rem 0;           /* Espace vertical */
+    text-align: center;        /* Centrage du texte */
+    color: #94a3b8;           /* Couleur gris moyen */
+    font-size: 0.9rem;        /* Petite taille de texte */
+    margin-top: 4rem;         /* Grand espace au-dessus */
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Adaptations pour écrans mobiles (max 768px) */
+@media (max-width: 768px) {
+    /* Réorganisation de la grille promo */
     .promo-grid {
-      grid-template-columns: 1fr;
-      grid-template-areas: 
-        "image"
-        "text"
-        "promo"
-        "button";
+        grid-template-columns: 1fr;  /* Une seule colonne */
+        grid-template-areas:         /* Nouvelle disposition verticale */
+            "image"
+            "text"
+            "promo"
+            "button";
     }
 
-      /* Header responsive */
-  header .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
+    /* Adaptation du header */
+    header .container {
+        flex-direction: column;  /* Empilement vertical */
+        text-align: center;     /* Centrage du texte */
+        gap: 1rem;             /* Espace entre éléments */
+    }
 
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
+    /* Navigation responsive */
+    nav ul {
+        flex-direction: column;  /* Empilement vertical */
+        gap: 1rem;             /* Espace entre liens */
+    }
 
-  /* Hero section responsive */
-  .hero {
-    padding: 2rem 0;
-    margin: 1rem auto;
-  }
+    /* Adaptation section hero */
+    .hero {
+        padding: 2rem 0;       /* Réduction de l'espace */
+        margin: 1rem auto;     /* Marges réduites */
+    }
 
-  .hero-text {
-    max-width: 100%;
-    text-align: center;
-    margin: 1rem auto;
-  }
+    /* Texte hero responsive */
+    .hero-text {
+        max-width: 100%;       /* Pleine largeur */
+        text-align: center;    /* Centrage */
+        margin: 1rem auto;     /* Marges automatiques */
+    }
 
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
+    /* Titre hero responsive */
+    .hero-text h1 {
+        font-size: 2.5rem;     /* Taille réduite */
+    }
 
-  .hero-text p {
-    font-size: 1.2rem;
-  }
-    
+    /* Sous-titre hero responsive */
+    .hero-text p {
+        font-size: 1.2rem;     /* Taille réduite */
+    }
+}
+
+/* Style du bouton promo mobile (commenté) */
 /*.promo-text .btn-primary {
-    grid-area: button;
-    justify-self: end;
-    margin-top: 1rem;
-    width: fit-content;
-    white-space: nowrap;
-    text-align: center; /* Centre le texte dans le bouton 
-    padding: 0.75rem 2rem; /* Ajuste le padding horizontal pour plus d'espace 
-}*/
-  }
+    grid-area: button;              /* Zone définie 
+    justify-self: end;             /* Alignement droite 
+    margin-top: 1rem;              /* Espace dessus 
+    width: fit-content;            /* Largeur adaptative 
+    white-space: nowrap;           /* Pas de retour ligne 
+    text-align: center;            /* Centrage du texte 
+    padding: 0.75rem 2rem;         /* Espacement intérieur
+}
+*/
 
-  /* Pour les très petits écrans */
+/* Adaptations pour les écrans de téléphone (max 480px) */
 @media (max-width: 480px) {
+  /* Titre principal hero responsive */
   .hero-text h1 {
-    font-size: 2rem;
+      font-size: 2rem;      /* Réduction importante de la taille */
   }
 
+  /* Sous-titre hero responsive */
   .hero-text p {
-    font-size: 1rem;
+      font-size: 1rem;      /* Taille standard pour lisibilité */
   }
 
+  /* Logo responsive */
   header .logo {
-    font-size: 1.5rem;
+      font-size: 1.5rem;    /* Réduction de la taille du logo */
   }
 }
 
+/* Adaptations pour les très petits écrans (max 250px) */
 @media (max-width: 250px) {
+  /* Titre principal hero responsive */
   .hero-text h1 {
-    font-size: 2rem;
+      font-size: 2rem;      /* Maintient la même taille que 480px */
   }
 
+  /* Sous-titre hero responsive */
   .hero-text p {
-    font-size: 1rem;
+      font-size: 1rem;      /* Maintient la même taille que 480px */
   }
 
+  /* Logo responsive */
   header .logo {
-    font-size: 1.5rem;
+      font-size: 1.5rem;    /* Maintient la même taille que 480px */
   }
 }
   

@@ -1,24 +1,27 @@
+/* Styles généraux du body */
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #05070c;
-    background-color: #ffffff;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
-  }
+  font-family: 'Poppins', sans-serif;  /* Police principale */
+  color: #05070c;                      /* Couleur de texte noire */
+  background-color: #ffffff;           /* Fond blanc */
+  line-height: 1.6;                    /* Hauteur de ligne pour lisibilité */
+  margin: 0;                           /* Supprime les marges */
+  padding: 0;                          /* Supprime les paddings */
+  height: 100vh;                       /* Hauteur plein écran */
+  display: flex;                       /* Mise en page flexible */
+  justify-content: center;             /* Centrage horizontal */
+  align-items: center;                 /* Centrage vertical */
+}
+
+/* Conteneur principal du contenu */
+.container {
+  text-align: center;                  /* Centre le texte */
+  padding: 1rem;                       /* Espace intérieur */
+}
+
+/* Style de l'image d'erreur */
+img {
+  max-width: 100%;                     /* Largeur maximale responsive */
+  height: auto;                        /* Hauteur proportionnelle */
+  margin-top: 1rem;                    /* Espace au-dessus */
+}
    
