@@ -66,6 +66,7 @@ body.darkmode .dark-mode-toggle:hover {
 .dark-mode-toggle:hover {
   /* Agrandit le bouton de 10% */
   transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 /* Styles pour le mode sombre - Modifications des couleurs quand .darkmode est activé */
@@ -174,6 +175,7 @@ body.darkmode .step {
   margin: 5px 0;     /* Espace entre les barres */
   background-color: #0f172a;  /* Couleur des barres */
   transition: 0.3s;  /* Animation douce */
+  
 }
 
 /* Bouton de fermeture du menu */
@@ -404,6 +406,7 @@ nav ul {
 /* Effet au survol des boutons */
 .btn-primary:hover {
   background-color: #1d4ed8;  /* Bleu plus foncé */
+  transform: scale(1.1);
 }
   
 /* ====== HERO SECTION ====== */
