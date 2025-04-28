@@ -401,12 +401,14 @@ nav ul {
   border-radius: 9999px;  /* Coins très arrondis (aspect pilule) */
   font-weight: 600;  /* Semi-gras */
   transition: background 0.3s ease;  /* Animation au survol */
+  
 }
 
 /* Effet au survol des boutons */
 .btn-primary:hover {
   background-color: #1d4ed8;  /* Bleu plus foncé */
   transform: scale(1.1);
+  transition: transform 0.4s ease;
 }
   
 /* ====== HERO SECTION ====== */
@@ -450,7 +452,7 @@ nav ul {
       -1px 1px 0 #000,
       1px 1px 0 #000,
       2px 2px 4px rgba(0,0,0,0.5);
-  -webkit-text-stroke: 1px #000;  /* Contour du texte */
+   /* -webkit-text-stroke: 1px #000;  Contour du texte */
 }
 
 /* Style du sous-titre hero */
@@ -459,7 +461,7 @@ nav ul {
   font-weight: 600;     /* Semi-gras */
   color: #d4e1ff;       /* Bleu clair */
   margin-bottom: 1rem;  /* Espace dessous */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);  /* Ombre portée */
+  text-shadow: 5px 5px 6px rgba(0,0,0,0.5);  /* Ombre portée */
   -webkit-text-stroke: 0.6px #000000;        /* Léger contour */
 }
 
@@ -495,7 +497,7 @@ nav ul {
   width: 100%;        /* Pleine largeur */
   height: 180px;      /* Hauteur fixe */
   object-fit: cover;  /* Couvre la zone */
-  border-radius: 2rem; /* Coins très arrondis */
+  border-radius: 1rem; /* Coins très arrondis */
 }
 
 /* Titres des cartes */
@@ -506,7 +508,7 @@ nav ul {
 
 /* Texte et cadre des cartes */
 .card p, .card {
-  padding: 0 1rem 1rem;  /* Espace intérieur */
+  padding: 1rem 1rem 1rem;  /* Espace intérieur */
   font-size: 0.9rem;     /* Petite taille */
   color: #475569;        /* Gris foncé */
 }
@@ -515,7 +517,7 @@ nav ul {
 .card span {
   background-color: #2563eb;  /* Fond bleu */
   color: #ffffff;            /* Texte blanc */
-  padding: 0.75rem 1.5rem;   /* Espace intérieur */
+  padding: 0.5rem 0.75rem;   /* Espace intérieur */
   border-radius: 9999px;     /* Forme de pilule */
   font-weight: 900;          /* Très gras */
 }
@@ -617,7 +619,7 @@ nav ul {
 }
   
 
-/* Style du bouton promo (commenté) */
+/* Style du bouton promo */
 /*.promo-text .btn-primary {
     grid-area: button;              /* Place le bouton dans la zone définie
     justify-self: end;             /* Aligne le bouton à droite
@@ -688,7 +690,7 @@ footer {
     }
 }
 
-/* Style du bouton promo mobile (commenté) */
+/* Style du bouton promo mobile */
 /*.promo-text .btn-primary {
     grid-area: button;              /* Zone définie 
     justify-self: end;             /* Alignement droite 
