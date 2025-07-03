@@ -1,0 +1,183 @@
+        /* Style du corps de la page */
+        body {
+            font-family: 'Poppins', sans-serif;  /* Police principale */
+            margin: 0;                           /* Supprime les marges */
+            padding: 0;                          /* Supprime les paddings */
+            height: 100vh;                       /* Hauteur plein écran */
+            display: flex;                       /* Mise en page flexible */
+            flex-direction: column;              /* Organisation verticale */
+            justify-content: center;             /* Centrage vertical */
+            align-items: center;                 /* Centrage horizontal */
+            background-color: #f8fafc;           /* Fond gris très clair */
+        }
+
+
+        /* Style du titre */
+        .title {
+            font-size: 1.5rem;                  /* Taille moyenne */
+            margin-bottom: 2rem;                /* Grand espace dessous */
+            color: #0f172a;                     /* Couleur foncée */
+        }
+
+        /* Style du bouton Voyageation */
+        .btn-voyageation {
+            padding: 1rem 2rem;                 /* Espace intérieur */
+            font-size: 1.2rem;                  /* Taille du texte */
+            background-color: #2563eb;          /* Fond bleu */
+            color: white;                       /* Texte blanc */
+            border: none;                       /* Pas de bordure */
+            border-radius: 9999px;              /* Forme arrondie */
+            cursor: pointer;                    /* Curseur pointer */
+            transition: background-color 0.3s ease; /* Animation douce */
+        }
+
+        /* Effet au survol du bouton */
+        .btn-voyageation:hover {
+            background-color: #1d4ed8;          /* Bleu plus foncé */
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+                /* Adaptation du bouton en mode sombre */
+                body.darkmode .btn-voyageation {
+                    background-color: #f97316;          /* Orange */
+                }
+        
+                /* Effet au survol en mode sombre */
+                body.darkmode .btn-voyageation:hover {
+                    background-color: #ea580c;          /* Orange plus foncé */
+                }
+
+        .toast-overlay {
+            position: fixed;
+            top: 60%;  /* Position verticale après le bouton */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;  /* Espace entre les toasts */
+        }
+        
+        .toast {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 1rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateY(20px);  /* Position initiale légèrement plus basse */
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);  /* Remonte à sa position finale */
+        }
+        
+        /* Version dark mode */
+        body.darkmode .toast {
+            background-color: #f97316;
+        }
+
+        .random-toast {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 1rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        body.darkmode .random-toast {
+            background-color: #f97316;
+        }
+        
+        .random-toast.show {
+            opacity: 1;
+        }
+
+        /* Styles du mode sombre */
+        body.darkmode {
+            background-color: #1a1a1a;          /* Fond presque noir */
+            color: #ffffff;                     /* Texte blanc */
+        }
+
+        /* Adaptation des textes en mode sombre */
+        body.darkmode .counter,
+        body.darkmode .title {
+            color: #ffffff;                     /* Texte blanc */
+        }
+
+        /* Adaptation du bouton en mode sombre */
+        body.darkmode .btn-orcosaure {
+            background-color: #f97316;          /* Orange */
+        }
+
+        /* Effet au survol en mode sombre */
+        body.darkmode .btn-orcosaure:hover {
+            background-color: #ea580c;          /* Orange plus foncé */
+        }
+
+    /* Style du bouton reset */
+    .btn-reset {
+        padding: 0.5rem 1rem;                /* Espace intérieur réduit */
+        font-size: 0.9rem;                   /* Taille plus petite */
+        background-color: #ef4444;           /* Rouge */
+        color: white;                        /* Texte blanc */
+        border: none;                        /* Pas de bordure */
+        border-radius: 9999px;               /* Forme arrondie */
+        cursor: pointer;                     /* Curseur pointer */
+        transition: background-color 0.3s ease; /* Animation douce */
+        margin-top: 1rem;                    /* Espace au-dessus */
+    }
+
+    .btn-reset:hover {
+        background-color: #dc2626;           /* Rouge plus foncé au survol */
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+
+    /* Adaptation du bouton reset en mode sombre */
+    body.darkmode .btn-reset {
+        background-color: #b91c1c;          /* Rouge plus sombre */
+    }
+
+    body.darkmode .btn-reset:hover {
+        background-color: #991b1b;          /* Rouge encore plus sombre au survol */
+    }
+
+    /* Styles du bouton Dark Mode */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 64px;
+    right: 32px;
+    border: none;
+    background: #2965e7;  /* Bleu */
+    color: white;
+    padding: 10px;
+    border-radius: 50%;  /* Forme circulaire */
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Style du bouton en mode sombre */
+body.darkmode .dark-mode-toggle {
+    background: #f97316;  /* Orange en mode sombre */
+}
+
+/* Style du bouton au survol en mode sombre */
+body.darkmode .dark-mode-toggle:hover {
+    background: #ea580c;  /* Orange plus foncé */
+}
+
+/* Animation au survol du bouton */
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
